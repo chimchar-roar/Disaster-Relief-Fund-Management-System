@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="wrapper">
+                <nav>
+                    <div class="logo">
+                    DISASTER MANAGEMENT <br>
+                    SYSTEM
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="{%url 'home-view'%}">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Govt
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{%url 'about'%}">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Contact Us
+                            </a>
+                        </li>
+                        <li><a href="/logoutUser/">
+                            <button class='login-button'>
+                                Logout
+                            </button>
+                        </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="hero-section">
+        <div class="about-section">
+            <div class="about-content">
+                <h1>ABOUT US</h1>
+                <!-- Add your additional content here -->
+                <p>At DRMS, we're on a mission to make disaster relief simpler and more effective.
+                     Our platform connects people and government agencies to streamline the coordination of relief efforts.</p>
+            </div>
+        
+                <div class="feature-container">
+                    <div class="feature-box">
+                        <h2>Our Mission</h2>
+                        <p>We are dedicated to creating a more resilient and responsive environment in the face of natural and man-made disasters.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h2>Our Impact</h2>
+                        <p>DRMS has been instrumental in numerous disaster relief efforts, contributing to the well-being of affected communities. We take pride in our ability to bring together individuals, organizations, and government agencies for a collective and impactful response.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h2>Collaborative Approach</h2>
+                        <p>We believe in the power of collaboration.By fostering a collaborative environment, we aim to maximize the impact of disaster relief efforts.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h2>Anytime Anywhere</h2>
+                        <p>We will always be on alert to respond and to help anyone regardless of anything else.</p>
+                    </div>
+                </div>
+                <p>JOIN US IN MAKING A DIFFERENCE</p><br>
+                <p>CONTACT US<br>
+                    For further inquiries, partnership opportunities, or to get involved, please contact us.</p>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>

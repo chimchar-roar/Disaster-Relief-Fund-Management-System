@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="wrapper">
+                <nav>
+                    <div class="logo">
+                    DISASTER MANAGEMENT <br>
+                    SYSTEM
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="{%url 'home-view'%}">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{%url 'about'%}">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Contact Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="login/staff/">
+                                Gov
+                            </a>
+                        </li>
+                        <li>
+                            {% if request.user.is_authenticated %}
+                            <a href="logoutUser/">
+                                <button class='login-button'>
+                                    Logout
+                                </button>
+                            </a>
+                            {% else %}
+                            <a href="login/citizen/">
+                                <button class='login-button'>
+                                    Login
+                                </button>
+                            </a>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="hero-section">
+        <div class="wrapper">
+            <div class="right">
+                <h1 class="animate-charcter">PREPARE<br>PLAN<br>STAY INFORMED</h1>
+            </div>
+            <div class="bottom-section">
+                <div class="bbtn">
+                    {% if request.user.is_authenticated %}
+                    <a href="citizen/applicationform/">
+                        <button class="button">
+                        APPLY NOW
+                        </button>
+                    </a>
+                    {% else %}
+                    <a href="login/citizen/">
+                        <button class="button">
+                        APPLY NOW
+                        </button>
+                    </a>
+                    {% endif %}
+                    <div class="content">
+                        <p>SUBMIT DETAILS OF DAMAGES AND APPLY FOR<br>FINANCIAL SUPPORT</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

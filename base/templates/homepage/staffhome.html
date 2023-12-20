@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="wrapper">
+                <nav>
+                    <div class="logo">
+                    DISASTER MANAGEMENT <br>
+                    SYSTEM
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="{% url 'staff-home' %}">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="govtmain.html">
+                                Govt
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Contact Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/logoutUser/">
+                                <button class='login-button'>
+                                    Logout
+                                </button>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="hero-section">
+        <div class="button-container">
+            <a href="{% url 'staff_citizens' %}">
+                <div class="box">
+                    <button class="box-button">Citizen Records</button>
+                </div>
+            </a>
+            <a href="{% url 'staff-transactions' %}">
+                <div class="box">
+                    <button class="box-button">Transactions</button>
+                </div>
+            </a>   
+        </div>
+        <div class="parent-container">
+            <div class="catch-line">
+                <h1>Welcome to Disaster Management System</h1>
+                <p>Empowering communities to respond<br> and recover from disasters.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

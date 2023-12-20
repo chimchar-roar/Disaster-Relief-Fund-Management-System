@@ -1,0 +1,22 @@
+<h1>Filled Application Form</h1>
+
+<h1>{{ instance }}</h1>
+       
+<h3>Detail : {{ instance.name }}</h3>
+<h3>Detail : {{ instance.house_no }}</h3>
+<h3>Detail : {{ instance.house_name }}</h3>
+<h3>Detail : {{ instance.address }}</h3>
+<h3>Detail : {{ instance.village_code }}</h3>
+<h3>Detail : {{ instance.aadhar_no }}</h3>
+<h3>Detail : {{ instance.ration_no }}</h3>
+<h3>Detail : {{ instance.account_no }}</h3>
+<h3>Detail : {{ instance.ifsc }}</h3>
+<h3>Detail : {{ instance.description }}</h3>
+
+{% if view %}
+<a href={{ url2 }}{{ username }}>View Survey form</a>
+
+{% else %}
+<a href={{ url1 }}{{ username }}>Fill Survey form</a>
+{% endif %}
+<a href="logoutUser/">LOGOUT</a>

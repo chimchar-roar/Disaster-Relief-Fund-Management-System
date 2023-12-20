@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="wrapper">
+                <nav>
+                    <div class="logo">
+                    DISASTER MANAGEMENT <br>
+                    SYSTEM
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="{% url 'home-view' %}">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Contact Us
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="hero-section">
+        <div class="form-box">
+            
+            <div class="login-container" id="register">
+                <div class="top">
+                    <span>Have an account? <a href="login.html">Login</a></span>
+                    <h2>Sign Up</h2>
+                </div>
+                <div class="getting-details">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="input-box">
+                        <label >{{ field.label }}</label>
+                        {{ field }}
+                    </div>
+                    {% endfor %}
+                    <button class="button" type="submit">Register</button> 
+                </form>
+                </div>
+                <div class="two-col">
+                    <div class="remember">
+                        <input type="checkbox" id="register-check">
+                        <label for="register-check"> Remember Me</label>
+                    </div>
+                    <a href="#">Terms & conditions</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body> 

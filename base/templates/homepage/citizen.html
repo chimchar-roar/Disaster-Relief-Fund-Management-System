@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="wrapper">
+                <nav>
+                    <div class="logo">
+                    DISASTER MANAGEMENT <br>
+                    SYSTEM
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="{% url 'staff-home' %}">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="govtmain.html">
+                                Govt
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Contact Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/logoutUser/">
+                                <button class='login-button'>
+                                    Logout
+                                </button>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="hero-section">
+        <!-- Add the table container -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>SL NO</th>
+                        <th>Citizen Details</th>
+                        <th>Add Details</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ob in objs %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td><a href="{%url 'each-citizen' ob.pk %}">{{ ob.name }}</a></td>
+                        {% if ob.survey_result %}
+                        <td><a href="{% url 'display-survey' ob.pk%}">Show details</a></td>
+                        {% else %}
+                        <td><a href="{% url 'fill-survey' ob.pk%}">Add details</a></td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+</body>
+</html>

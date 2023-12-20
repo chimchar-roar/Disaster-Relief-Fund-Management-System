@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="wrapper">
+                <nav>
+                    <div class="logo">
+                    DISASTER MANAGEMENT <br>
+                    SYSTEM
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="{%url 'home-view'%}">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{%url 'about'%}">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Contact Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'logout-user'%}">
+                                <button class='login-button'>
+                                    Logout
+                                </button>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="hero-section">
+        <div class="register-form">
+            <form  method="POST" action="">
+                {% csrf_token %}
+                <h2>REGISTRATION</h2>
+                <div class="apply">
+                    <h1>Residential details</h1>
+                    <div class="house-details">
+                    <div class="input-box">
+                        <label >House No</label>
+                        <input type="text" name="house_no"> 
+                    </div>
+                    <div class="input-box">
+                        <label >House Name</label>
+                        <input type="text" name="house_name"> 
+                    </div>
+                    </div>
+                    <div class="description">
+                        <label >Address</label>
+                        <textarea  rows="5" name="address"></textarea>
+                    </div>
+                    <div class="input-box">
+                        <label >village code</label>
+                        <input type="'text" name="village_code">
+                    </div>
+                    <h1>Card details</h1>
+                    <div class="card-details">
+                    <div class="input-box">
+                        <label >Aadhar No</label>
+                        <input type="text" name="aadhar_no"> 
+                    </div>
+                    <div class="input-box">
+                        <label >Ration card No</label>
+                        <input type="text" name="ration_no"> 
+                    </div>
+                    </div>
+                    <h1>Account details</h1>
+                    <div class="account-details">
+                        <div class="input-box">
+                            <label >Account No</label>
+                            <input type="text" name="account_no"> 
+                        </div>
+                        <div class="input-box">
+                            <label >IFSC code</label>
+                            <input type="text" name="ifsc"> 
+                        </div>
+                    </div>
+                    <div class="description">
+                        <label >Provide description</label>
+                        <textarea  rows="5" name="description"></textarea>
+                    </div>
+                </div>
+            
+            <div class="alert">
+                <p>By clicking register you agree to all Terms and conditions provided by the Government of India</p>
+            </div>
+            <button class="button" type="submit">
+                REGISTER
+            </button>
+        </form>
+        </div>
+    </div>
+</body>
+</html>

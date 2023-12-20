@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="wrapper">
+                <nav>
+                    <div class="logo">
+                    DISASTER MANAGEMENT <br>
+                    SYSTEM
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="{% url 'staff-home' %}">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="govtmain.html">
+                                Govt
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Contact Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/logoutUser/">
+                                <button class='login-button'>
+                                    Logout
+                                </button>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero-section">
+        <div class="card-container">
+            <div class="card">
+                <h2>Survey details</h2>
+                <ul>
+                    <li><strong>Name:</strong> {{ instance.name }}</li>
+                    <li><strong>House no:</strong> {{ instance.house_no }}</li>
+                    <li><strong>House name:</strong> {{ instance.house_name }}</li>
+                    <li><strong>Address:</strong> {{ instance.address }}</li>
+                    <li><strong>Survey description:</strong> {{ instance.survey_desc }}</li>
+                    <li><strong>Estimated loss:</strong> {{ instance.estimated_loss }}</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
